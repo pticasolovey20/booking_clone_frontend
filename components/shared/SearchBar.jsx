@@ -1,9 +1,14 @@
+'use client';
+
+import { useAppContext } from '@/context/AppContext';
 import { cn } from '@/utils';
 
 import { IoSearch } from 'react-icons/io5';
 import { LuSettings2 } from 'react-icons/lu';
 
 export const SearchBar = () => {
+	const { handleModalOpen } = useAppContext();
+
 	return (
 		<nav className='h-20 w-full flex items-center justify-between gap-2 md:hidden pt-4 px-6 xxl:px-20'>
 			<div
@@ -29,6 +34,7 @@ export const SearchBar = () => {
 
 			<button
 				type='button'
+				onClick={handleModalOpen}
 				className={cn(
 					'aspect-square flex items-center justify-center',
 					'p-3 rounded-full border border-gray-400 cursor-pointer'

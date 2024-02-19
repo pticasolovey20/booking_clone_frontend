@@ -1,16 +1,21 @@
+'use client';
+
+import { useAppContext } from '@/context/AppContext';
 import { cn } from '@/utils';
 
 import { CategoryList } from '@/components/shared/categories/CategoryList';
-import { Filter } from '@/components/shared/header/Filter';
+import { FilterButton } from '@/components/shared/filters/FilterButton';
 import { Switcher } from '@/components/ui/Switcher';
 
 export const CategoryBar = () => {
+	const { handleModalOpen } = useAppContext();
+
 	return (
 		<div className='h-20 w-full px-6 md:px-8 xxl:px-20 flex items-center justify-between gap-6'>
 			<CategoryList />
 
 			<div className='hidden md:flex shrink-0 items-center gap-4 text-[12px] font-semibold'>
-				<Filter />
+				<FilterButton onClick={handleModalOpen} />
 
 				<div
 					className={cn(

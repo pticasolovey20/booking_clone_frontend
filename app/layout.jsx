@@ -1,4 +1,6 @@
 import { Poppins } from 'next/font/google';
+import { AppContextProvider } from '@/context/AppContext';
+
 import './globals.css';
 
 const font = Poppins({
@@ -15,7 +17,7 @@ const RootLayout = ({ children }) => {
 	return (
 		<html lang='en'>
 			<body className={font.className} suppressHydrationWarning={true}>
-				{children}
+				<AppContextProvider>{children}</AppContextProvider>
 			</body>
 		</html>
 	);

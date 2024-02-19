@@ -1,5 +1,5 @@
 import { Header } from '@/components/ui/Header';
-import { Navbar } from '@/components/shared/header/Navbar';
+import { Navbar } from '@/components/shared/Navbar';
 import { Footer } from '@/components/ui/Footer';
 
 const RoomsLayout = ({ children }) => {

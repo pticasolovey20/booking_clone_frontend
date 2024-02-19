@@ -3,7 +3,7 @@
 import { useParams } from 'next/navigation';
 import { ROOMS } from '@/constants';
 
-import { Gallery } from '@/components/shared/place_details/Gallery';
+import { Gallery } from '@/components/shared/Gallery';
 
 const RoomDetailsPage = () => {
 	const { id } = useParams();
