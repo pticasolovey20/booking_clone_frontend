@@ -1,3 +1,5 @@
+'use client';
+
 import { cn } from '@/utils';
 
 import { CategoryList } from '@/components/shared/categories/CategoryList';
@@ -5,6 +7,8 @@ import { FilterButton } from '@/components/shared/filters/FilterButton';
 import { Switch } from '@/components/ui/switch';
 
 export const CategoryBar = () => {
+	const handleCheck = (prev) => console.log(`cheked: ${prev}`);
+
 	return (
 		<div className='h-20 w-full px-6 md:px-8 xxl:px-20 flex items-center justify-between gap-6 shadow-md'>
 			<CategoryList />
@@ -19,7 +23,7 @@ export const CategoryBar = () => {
 					)}
 				>
 					<span>Display total before taxes</span>
-					<Switch />
+					<Switch onCheckedChange={handleCheck} />
 				</div>
 			</div>
 		</div>
