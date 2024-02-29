@@ -1,6 +1,6 @@
 import { cn } from '@/utils';
 
-export const CardPagination = () => {
+export const RoomImagePagination = () => {
 	return (
 		<div className='absolute bottom-2 right-1/2 transform translate-x-1/2 flex items-center gap-1'>
 			{Array.from({ length: 5 }).map((_, index) => (

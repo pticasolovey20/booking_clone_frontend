@@ -1,7 +1,7 @@
 import { cn } from '@/utils';
-import { CardItem } from '@/components/shared/cards/CardItem';
+import { RoomItem } from '@/components/shared/rooms/RoomItem';
 
-export const CardList = ({ rooms }) => {
+export const RoomsList = ({ rooms }) => {
 	return (
 		<div
 			className={cn(
@@ -10,7 +10,7 @@ export const CardList = ({ rooms }) => {
 			)}
 		>
 			{rooms.map((room) => (
-				<CardItem key={room.id} {...room} />
+				<RoomItem key={room.id} {...room} />
 			))}
 		</div>
 	);
