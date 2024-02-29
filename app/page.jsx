@@ -24,7 +24,9 @@ const HomePage = () => {
 						Continue viewing the category «some category»
 					</span>
 
-					<Button className='font-semibold'>Show More</Button>
+					<Button asChild className='font-semibold'>
+						Show More
+					</Button>
 				</div>
 			)}
 		</>
