@@ -1,11 +1,11 @@
 'use client';
 
 import { useQuery } from '@tanstack/react-query';
-import { fetchRooms } from '@/axios/fetchRooms';
+import { fetchRooms } from '@/axios/fetchData';
+import { cn } from '@/utils';
 
 import { CardList } from '@/components/shared/cards/CardList';
 import { CardSkeleton } from '@/components/shared/cards/CardSkeleton';
-import { Button } from '@/components/ui/button';
 
 const HomePage = () => {
 	const { isLoading, data: rooms } = useQuery({
@@ -24,9 +24,17 @@ const HomePage = () => {
 						Continue viewing the category «some category»
 					</span>
 
-					<Button asChild className='font-semibold'>
+					<button
+						type='button'
+						title='Show More'
+						className={cn(
+							'text-white font-semibold',
+							'py-3 px-6 rounded-lg',
+							'bg-[#222222] hover:bg-black duration-300'
+						)}
+					>
 						Show More
-					</Button>
+					</button>
 				</div>
 			)}
 		</>

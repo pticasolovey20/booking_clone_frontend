@@ -1,5 +1,6 @@
 import { FaFacebookSquare, FaTwitterSquare, FaInstagramSquare } from 'react-icons/fa';
 
+//categories
 export const categories = [
 	{ id: 1, source: '/categories/trending.jpg', alt: 'trending' },
 	{ id: 2, source: '/categories/islands.jpg', alt: 'islands' },
@@ -19,6 +20,7 @@ export const categories = [
 	{ id: 16, source: '/categories/tiny_homes.jpg', alt: 'tiny_homes' },
 ];
 
+//footer
 export const supportLinks = [
 	{
 		id: 1,
