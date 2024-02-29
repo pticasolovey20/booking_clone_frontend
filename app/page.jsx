@@ -1,26 +1,33 @@
-import { Header } from '@/components/ui/Header';
-import { Navbar } from '@/components/shared/header/Navbar';
-import { SearchBar } from '@/components/shared/header/SearchBar';
-import { CategoryBar } from '@/components/shared/categories/CategoryBar';
+'use client';
+
+import { useQuery } from '@tanstack/react-query';
+import { fetchRooms } from '@/axios/fetchRooms';
 
 import { CardList } from '@/components/shared/cards/CardList';
-import { Footer } from '@/components/ui/Footer';
+import { CardSkeleton } from '@/components/shared/cards/CardSkeleton';
+// import { Button } from '@/components/ui/button';
 
 const HomePage = () => {
+	const { isLoading, data: rooms } = useQuery({
+		queryKey: ['rooms'],
+		queryFn: () => fetchRooms(),
+	});
+
 	return (
-		<div className='h-full flex flex-col'>
-			<Header>
-				<Navbar />
-				<SearchBar />
-				<CategoryBar />
-			</Header>
+		<>
+			{!isLoading && !!rooms.length && <CardList rooms={rooms} />}
+			{isLoading && <CardSkeleton amount={10} />}
 
-			<main className='flex-1 mt-48 mb-8 px-8 xxl:px-20'>
-				<CardList />
-			</main>
+			{!isLoading && !!rooms.length && (
+				<div className='w-full flex flex-col items-center justify-center gap-2'>
+					<span className='font-semibold text-lg'>
+						Continue viewing the category «some category»
+					</span>
 
-			<Footer styles='max-w-[1300px] xl:px-20' />
-		</div>
+					{/* <Button className='font-semibold'>Show More</Button> */}
+				</div>
+			)}
+		</>
 	);
 };
 

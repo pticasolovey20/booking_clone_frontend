@@ -1,6 +1,5 @@
-import { cn } from '@/utils';
-
 import Image from 'next/image';
+import { cn } from '@/utils';
 
 export const Gallery = ({ galleryImages }) => {
 	return (

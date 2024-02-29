@@ -1,7 +1,6 @@
 'use client';
 
 import { cn } from '@/utils';
-
 import { IoChevronBackOutline } from 'react-icons/io5';
 
 export const PrevCircleButton = ({ styles, onClick }) => {

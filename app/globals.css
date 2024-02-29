@@ -11,3 +11,23 @@ body,
 ::-webkit-scrollbar {
 	display: none;
 }
+
+@layer base {
+	:root {
+		--primary: 0, 0%, 100%;
+		--secondary: 0, 0%, 97%;
+
+		--tertiary: 216, 12%, 84%;
+		--tertiary-foreground: 217.895, 11%, 65%;
+
+		--accent: 349, 100%, 61%;
+
+		--border: 216, 12%, 84%;
+		--border-separator: 220, 13%, 91%;
+	}
+
+	.dark {
+		--primary: '';
+		--secondary: '';
+	}
+}
