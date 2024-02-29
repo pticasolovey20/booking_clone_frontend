@@ -7,7 +7,7 @@ import { IoSearch } from 'react-icons/io5';
 import { LuSettings2 } from 'react-icons/lu';
 
 export const SearchBar = () => {
-	const { handleModalOpen } = useAppContext();
+	const { handleFilterModalOpen } = useAppContext();
 
 	return (
 		<nav className='h-20 w-full flex items-center justify-between gap-2 md:hidden pt-4 px-6 xxl:px-20'>
@@ -34,7 +34,7 @@ export const SearchBar = () => {
 
 			<button
 				type='button'
-				onClick={handleModalOpen}
+				onClick={handleFilterModalOpen}
 				className='aspect-square flex items-center justify-center p-3 rounded-full border border-border cursor-pointer'
 			>
 				<LuSettings2 strokeWidth={3} />

@@ -5,7 +5,7 @@ import { fetchRooms } from '@/axios/fetchRooms';
 
 import { CardList } from '@/components/shared/cards/CardList';
 import { CardSkeleton } from '@/components/shared/cards/CardSkeleton';
-// import { Button } from '@/components/ui/button';
+import { Button } from '@/components/ui/button';
 
 const HomePage = () => {
 	const { isLoading, data: rooms } = useQuery({
@@ -24,7 +24,7 @@ const HomePage = () => {
 						Continue viewing the category «some category»
 					</span>
 
-					{/* <Button className='font-semibold'>Show More</Button> */}
+					<Button className='font-semibold'>Show More</Button>
 				</div>
 			)}
 		</>
