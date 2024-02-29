@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { Button } from '@/components/ui/button';
+import { cn } from '@/utils';
 
 const NotFoundPage = () => {
 	return (
@@ -12,9 +12,16 @@ const NotFoundPage = () => {
 					<p className='text-2xl'>We can not seem to find the page you are looking for.</p>
 					<span className='font-semibold'>Error code: 404</span>
 
-					<Button asChild className='max-w-[200px]'>
-						<Link href='/'>Back to Home</Link>
-					</Button>
+					<Link
+						href='/'
+						className={cn(
+							'text-center text-white font-semibold',
+							'max-w-[200px] py-3 px-6 rounded-lg',
+							'bg-[#222222] hover:bg-black duration-300'
+						)}
+					>
+						Back to Home
+					</Link>
 				</div>
 
 				<div className='hidden md:flex relative aspect-square basis-[30%] grow shrink'>
