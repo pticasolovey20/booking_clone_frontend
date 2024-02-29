@@ -33,7 +33,10 @@ export const metadata = {
 const RootLayout = ({ children }) => {
 	return (
 		<html lang='en'>
-			<body className={cn(font.className, 'flex flex-col')} suppressHydrationWarning={true}>
+			<body
+				className={cn(font.className, 'min-h-screen flex flex-col')}
+				suppressHydrationWarning={true}
+			>
 				<QueryProvider>
 					<AppContextProvider>
 						<Header>
