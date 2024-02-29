@@ -8,20 +8,21 @@ import { FaStar } from 'react-icons/fa';
 
 import { NextCircleButton } from '@/components/shared/buttons/NextCircleButton';
 import { PrevCircleButton } from '@/components/shared/buttons/PrevCircleButton';
+import { CardPagination } from '@/components/shared/cards/CardPagination';
 
-export const CardItem = ({ id, galleryImages, title, rate, viewes, total }) => {
+export const CardItem = ({ galleryImages, title, rate, viewes, total }) => {
 	const hasPrevPage = false;
 	const hasNextPage = true;
 
 	return (
-		<div className='flex flex-col gap-4 select-none group'>
-			<Link href={`/rooms/${id}`} className='aspect-square rounded-2xl overflow-hidden'>
+		<Link href='/s' className='flex flex-col gap-4 select-none group'>
+			<div className='aspect-square rounded-2xl overflow-hidden'>
 				<div className='relative h-full w-full'>
 					<span
 						className={cn(
 							'text-sm font-semibold',
 							'absolute top-3 left-3 z-10',
-							'px-3 py-1 rounded-full bg-white'
+							'px-3 py-1 rounded-full bg-primary'
 						)}
 					>
 						Guest favorite
@@ -30,6 +31,17 @@ export const CardItem = ({ id, galleryImages, title, rate, viewes, total }) => {
 					<button type='button' className='absolute top-3 right-4 z-10'>
 						<GoHeart size={25} color='white' />
 					</button>
+
+					{hasPrevPage && (
+						<PrevCircleButton
+							styles={[
+								'hidden group-hover:block',
+								'absolute top-1/2 -translate-y-1/2 left-4',
+								'transition-all duration-200 bg-primary/90',
+								'hover:bg-primary hover:scale-105',
+							]}
+						/>
+					)}
 
 					<Image
 						fill
@@ -40,45 +52,23 @@ export const CardItem = ({ id, galleryImages, title, rate, viewes, total }) => {
 						sizes='(width:100%), (height:100%)'
 					/>
 
-					{hasPrevPage && (
-						<PrevCircleButton
-							styles={[
-								'hidden group-hover:block',
-								'absolute top-1/2 -translate-y-1/2 left-4',
-								'transition-all duration-200 bg-white/90',
-								'hover:bg-white hover:scale-105',
-							]}
-						/>
-					)}
-
 					{hasNextPage && (
 						<NextCircleButton
 							styles={[
 								'hidden group-hover:block',
 								'absolute top-1/2 -translate-y-1/2 right-4',
-								'transition-all duration-200 bg-white/90',
-								'hover:bg-white hover:scale-105',
+								'transition-all duration-200 bg-primary/90',
+								'hover:bg-primary hover:scale-105',
 							]}
 						/>
 					)}
 
-					<div className='absolute bottom-2 right-1/2 transform translate-x-1/2 flex items-center gap-1'>
-						{Array.from({ length: 5 }).map((_, index) => (
-							<div
-								key={index}
-								className={cn(
-									'rounded-full',
-									index !== 4 ? 'h-1.5 w-1.5' : 'h-1 w-1',
-									index === 0 ? 'bg-white' : 'bg-gray-200'
-								)}
-							/>
-						))}
-					</div>
+					<CardPagination />
 				</div>
-			</Link>
+			</div>
 
 			<div>
-				<Link href={`/rooms/${id}`} className='flex flex-col gap-1'>
+				<div className='flex flex-col gap-1'>
 					<div className='w-full flex justify-between gap-1'>
 						<span className='w-full text-sm tracking-tight font-semibold truncate'>{title}</span>
 
@@ -99,7 +89,7 @@ export const CardItem = ({ id, galleryImages, title, rate, viewes, total }) => {
 						<div className='h-[2px] w-[2px] bg-black' />
 						<span>May 27-Jun 1</span>
 					</div>
-				</Link>
+				</div>
 
 				<div className='w-full'>
 					<p className='w-full truncate underline text-sm cursor-pointer'>
@@ -107,6 +97,6 @@ export const CardItem = ({ id, galleryImages, title, rate, viewes, total }) => {
 					</p>
 				</div>
 			</div>
-		</div>
+		</Link>
 	);
 };

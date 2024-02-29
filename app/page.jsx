@@ -1,58 +1,33 @@
 'use client';
 
-import { Suspense } from 'react';
-import { useAppContext } from '@/context/AppContext';
-import { AnimatePresence } from 'framer-motion';
+import { useQuery } from '@tanstack/react-query';
+import { fetchRooms } from '@/axios/fetchRooms';
 
-import { Header } from '@/components/ui/Header';
-import { Navbar } from '@/components/shared/Navbar';
-import { SearchBar } from '@/components/shared/SearchBar';
-import { CategoryBar } from '@/components/shared/categories/CategoryBar';
-
-import { CardSkeleton } from '@/components/shared/cards/CardSkeleton';
 import { CardList } from '@/components/shared/cards/CardList';
-import { Modal } from '@/components/ui/modal/Modal';
-import { FiltersContent } from '@/components/shared/filters/FiltersContent';
-import { Button } from '@/components/ui/Button';
-
-import { Footer } from '@/components/ui/Footer';
+import { CardSkeleton } from '@/components/shared/cards/CardSkeleton';
+import { Button } from '@/components/ui/button';
 
 const HomePage = () => {
-	const { isModalOpen, handleModalClose } = useAppContext();
+	const { isLoading, data: rooms } = useQuery({
+		queryKey: ['rooms'],
+		queryFn: () => fetchRooms(),
+	});
 
 	return (
-		<div className='h-full flex flex-col overflow-hidden'>
-			<Header>
-				<Navbar />
-				<SearchBar />
-				<CategoryBar />
-			</Header>
+		<>
+			{!isLoading && !!rooms.length && <CardList rooms={rooms} />}
+			{isLoading && <CardSkeleton amount={10} />}
 
-			<main className='h-full flex flex-col gap-16 mt-48 mb-8 px-8 xxl:px-20'>
-				<Suspense fallback={<CardSkeleton amount={4} />}>
-					<CardList />
-				</Suspense>
+			{!isLoading && !!rooms.length && (
+				<div className='w-full flex flex-col items-center justify-center gap-2'>
+					<span className='font-semibold text-lg'>
+						Continue viewing the category «some category»
+					</span>
 
-				<AnimatePresence initial={false} mode='wait'>
-					{isModalOpen && (
-						<Modal handleClose={handleModalClose} label='Filters' content={<FiltersContent />} />
-					)}
-				</AnimatePresence>
-
-				<div className='w-full flex flex-col items-center justify-center gap-4'>
-					<Button
-						label='Show more'
-						styles={[
-							'text-white font-semibold',
-							'py-3 px-6 rounded-lg transition-all',
-							'duration-300 bg-black/85 hover:bg-black',
-						]}
-					/>
+					<Button className='font-semibold'>Show More</Button>
 				</div>
-			</main>
-
-			<Footer styles='max-w-[1300px] xl:px-20' />
-		</div>
+			)}
+		</>
 	);
 };
 

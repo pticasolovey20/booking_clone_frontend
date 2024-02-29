@@ -11,7 +11,7 @@ export const Backdrop = ({ children, onClick }) => {
 			className={cn(
 				'fixed top-0 left-0 h-screen w-full',
 				'flex justify-center items-center',
-				'bg-black bg-opacity-50 z-20'
+				'bg-black/50 z-20'
 			)}
 		>
 			{children}

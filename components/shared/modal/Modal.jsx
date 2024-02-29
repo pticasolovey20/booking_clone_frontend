@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { cn } from '@/utils';
 
-import { Backdrop } from '@/components/ui/modal/Backdrop';
+import { Backdrop } from '@/components/shared/modal/Backdrop';
 import { MdOutlineClose } from 'react-icons/md';
 
 const dropIn = {
@@ -40,9 +40,9 @@ export const Modal = ({ handleClose, label, content }) => {
 				variants={dropIn}
 				onClick={(event) => event.stopPropagation()}
 				className={cn(
-					'w-full sm:w-[640px] h-[calc(100%-10px)] sm:h-[600px]',
-					'absolute sm:static bottom-0 flex flex-col',
-					'rounded-t-xl sm:rounded-xl bg-white'
+					'w-full md:w-[576px] h-[calc(100%-10px)] md:h-[600px]',
+					'absolute md:static bottom-0 flex flex-col',
+					'rounded-t-xl md:rounded-xl bg-white'
 				)}
 			>
 				<div className='relative w-full border-b p-5'>
