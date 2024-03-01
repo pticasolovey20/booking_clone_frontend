@@ -2,6 +2,12 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+html,
+body,
+:root {
+	height: 100svh;
+}
+
 ::-webkit-scrollbar {
 	display: none;
 }
