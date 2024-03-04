@@ -6,7 +6,6 @@ html,
 body,
 :root {
 	height: 100dvh;
-	height: --webkit-fill-avaliable;
 }
 
 ::-webkit-scrollbar {

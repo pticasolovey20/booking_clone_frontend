@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '@/utils';
 
@@ -31,6 +32,11 @@ const dropIn = {
 };
 
 export const Modal = ({ handleClose, label, content }) => {
+	useEffect(() => {
+		document.body.style.overflow = 'hidden';
+		return () => (document.body.style.overflow = 'unset');
+	}, []);
+
 	return (
 		<Backdrop onClick={handleClose}>
 			<motion.div
