@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { PhoneSchema } from '@/schemas/Auth';
+import { PhoneSchema } from '@/schemas/auth';
 
 import Link from 'next/link';
 
