@@ -5,7 +5,7 @@ import { cn } from '@/utils';
 
 const NotFoundPage = () => {
 	return (
-		<section className='fixed inset-0 flex-1 w-full flex justify-center items-center bg-primary z-30'>
+		<section className='absolute inset-0 w-full flex justify-center items-center bg-primary z-30'>
 			<div className='flex max-w-[992px] w-full p-8'>
 				<div className='flex flex-col justify-center basis-[40%] grow shrink gap-4 text-[#484848]'>
 					<h1 className='text-6xl font-extrabold'>Oops!</h1>

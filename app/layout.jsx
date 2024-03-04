@@ -49,13 +49,13 @@ const RootLayout = ({ children }) => {
 						<main className='flex-1 flex flex-col gap-16 mt-4 mb-12 px-8 xxl:px-20'>
 							{children}
 						</main>
-						<ReactQueryDevtools initialIsOpen={false} />
 
 						<Footer>
 							<SupportLinks />
 							<FooterLinks />
 						</Footer>
 					</AppContextProvider>
+					<ReactQueryDevtools initialIsOpen={false} />
 				</QueryProvider>
 			</body>
 		</html>
