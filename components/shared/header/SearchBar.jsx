@@ -22,7 +22,7 @@ export const SearchBar = () => {
 				</div>
 
 				<div className='flex flex-col items-start leading-none'>
-					<span className='text-sm font-semibold'>Anywhere</span>
+					<span className='text-sm font-medium'>Anywhere</span>
 
 					<div className='flex items-center gap-2 text-[12px]'>
 						<span>Any week</span>

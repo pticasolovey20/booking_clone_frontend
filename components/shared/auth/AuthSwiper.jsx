@@ -27,10 +27,12 @@ export const AuthSwiper = ({ handleClose }) => {
 	const handleNextStep = () => setCurrentStep((prev) => (prev < steps.length ? prev + 1 : prev));
 
 	return (
-		<div className='w-full md:w-[576px]'>
+		<div className='w-full md:w-[576px] flex flex-col'>
 			<div className='relative w-full border-b p-5'>
 				{currentStep !== 1 ? (
 					<button
+						type='button'
+						aria-label='Go back'
 						onClick={handlePrevStep}
 						className='p-1.5 rounded-full hover:bg-secondary duration-300'
 					>
@@ -38,6 +40,8 @@ export const AuthSwiper = ({ handleClose }) => {
 					</button>
 				) : (
 					<button
+						type='button'
+						aria-label='Close modal'
 						onClick={handleClose}
 						className='p-1.5 rounded-full hover:bg-secondary duration-300'
 					>
@@ -58,7 +62,7 @@ export const AuthSwiper = ({ handleClose }) => {
 
 			<div
 				className={cn(
-					'h-full w-full p-6',
+					'flex-1 w-full p-6',
 					'flex flex-col items-center',
 					'select-none overflow-auto'
 				)}

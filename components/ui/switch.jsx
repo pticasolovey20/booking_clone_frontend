@@ -9,6 +9,7 @@ const Switch = React.forwardRef(({ className, ...props }, ref) => (
 	<SwitchPrimitives.Root
 		ref={ref}
 		{...props}
+		aria-label='Toggle taxes'
 		className={cn(
 			'peer h-6 w-9 inline-flex shrink-0 items-center',
 			'rounded-full border-2 border-transparent transition-colors cursor-pointer',

@@ -29,7 +29,7 @@ export const FooterLinks = () => {
 				))}
 			</ul>
 
-			<div className='flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-4 text-sm font-semibold'>
+			<div className='flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-4 text-sm font-medium'>
 				<div className='flex items-center gap-2'>
 					<Link href='/' className='flex items-center gap-1 hover:underline'>
 						<FiGlobe />

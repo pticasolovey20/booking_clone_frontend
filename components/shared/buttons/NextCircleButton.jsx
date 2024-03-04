@@ -6,6 +6,7 @@ import { IoChevronForward } from 'react-icons/io5';
 export const NextCircleButton = ({ styles, onClick }) => {
 	return (
 		<button
+			aria-label='Previous categories'
 			type='button'
 			onClick={onClick}
 			className={cn('relative h-8 w-8 aspect-square rounded-full', styles)}

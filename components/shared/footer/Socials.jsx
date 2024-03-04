@@ -4,9 +4,11 @@ import { socials } from '@/constants';
 export const Socials = () => {
 	return (
 		<ul className='flex flex-wrap gap-3'>
-			{socials.map(({ id, icon }) => (
+			{socials.map(({ id, ariaLabel, icon }) => (
 				<li key={id}>
-					<Link href='/'>{icon}</Link>
+					<Link href='/' aria-label={ariaLabel}>
+						{icon}
+					</Link>
 				</li>
 			))}
 		</ul>
