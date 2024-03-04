@@ -27,10 +27,14 @@ export const Navbar = () => {
 						)}
 					>
 						<ul className='w-full flex items-center text-sm'>
-							<li className='font-semibold px-3'>Anywhere</li>
-							<div className='block w-px h-6 bg-tertiary' />
-							<li className='font-semibold px-3'>Any week</li>
-							<div className='block w-px h-6 bg-tertiary' />
+							<li className='font-medium px-3'>Anywhere</li>
+							<li>
+								<div className='block w-px h-6 bg-tertiary' />
+							</li>
+							<li className='font-medium px-3'>Any week</li>
+							<li>
+								<div className='block w-px h-6 bg-tertiary' />
+							</li>
 							<li className='text-gray-500 px-3'>Add guests</li>
 						</ul>
 
@@ -41,24 +45,22 @@ export const Navbar = () => {
 				</div>
 			</div>
 
-			<div className='flex-[2]'>
-				<ul className='flex items-center justify-end lg:gap-2'>
-					<li className='flex items-center'>
-						<Link
-							href='/'
-							className={cn(
-								'text-sm tracking-tight font-semibold whitespace-nowrap',
-								'py-2 px-4 rounded-full duration-300 hover:bg-secondary'
-							)}
-						>
-							Airbnb your home
-						</Link>
+			<div className='flex-[2] flex items-center justify-end lg:gap-2'>
+				<div className='flex items-center'>
+					<Link
+						href='/'
+						className={cn(
+							'text-sm tracking-tight font-medium whitespace-nowrap',
+							'py-2 px-4 rounded-full duration-300 hover:bg-secondary'
+						)}
+					>
+						Airbnb your home
+					</Link>
 
-						<LanguagesButton />
-					</li>
+					<LanguagesButton />
+				</div>
 
-					<MenuDropdown />
-				</ul>
+				<MenuDropdown />
 			</div>
 		</nav>
 	);

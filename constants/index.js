@@ -69,7 +69,7 @@ export const footerLinks = [
 ];
 
 export const socials = [
-	{ id: 1, icon: <FaFacebookSquare size={20} /> },
-	{ id: 2, icon: <FaTwitterSquare size={20} /> },
-	{ id: 3, icon: <FaInstagramSquare size={20} /> },
+	{ id: 1, ariaLabel: 'Redirect to Facebook', icon: <FaFacebookSquare size={20} /> },
+	{ id: 2, ariaLabel: 'Redirect to Twitter', icon: <FaTwitterSquare size={20} /> },
+	{ id: 3, ariaLabel: 'Redirect to Instagram', icon: <FaInstagramSquare size={20} /> },
 ];

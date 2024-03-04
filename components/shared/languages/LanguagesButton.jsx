@@ -8,6 +8,7 @@ export const LanguagesButton = () => {
 
 	return (
 		<button
+			aria-label='Choose language'
 			onClick={handleLanguageModalOpen}
 			className='p-3 rounded-full duration-300 hover:bg-secondary cursor-pointer'
 		>

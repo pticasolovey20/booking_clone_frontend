@@ -20,9 +20,8 @@ export const MenuDropdown = () => {
 
 	return (
 		<DropdownMenu>
-			<DropdownMenuTrigger>
+			<DropdownMenuTrigger aria-label='Toggle menu'>
 				<div
-					role='li'
 					className={cn(
 						'flex items-center gap-3 py-2 px-3',
 						'rounded-full border border-border cursor-pointer',

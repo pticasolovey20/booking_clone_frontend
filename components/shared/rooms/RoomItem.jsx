@@ -28,7 +28,11 @@ export const RoomItem = ({ galleryImages, title, rate, viewes, total }) => {
 						Guest favorite
 					</span>
 
-					<button type='button' className='absolute top-3 right-4 z-10'>
+					<button
+						type='button'
+						aria-label='Add to favorite'
+						className='absolute top-3 right-4 z-10'
+					>
 						<GoHeart size={25} color='white' />
 					</button>
 

@@ -22,9 +22,7 @@ const HomePage = () => {
 
 			{!isLoading && !!rooms.length && (
 				<div className='w-full flex flex-col items-center justify-center gap-2'>
-					<span className='font-semibold text-lg'>
-						Continue viewing the category «some category»
-					</span>
+					<span className='font-medium text-lg'>Continue viewing the category «some category»</span>
 
 					<button
 						type='button'

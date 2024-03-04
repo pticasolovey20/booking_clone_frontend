@@ -17,7 +17,7 @@ export const PhoneForm = ({ handleNextStep }) => {
 	const onSubmit = () => handleNextStep();
 
 	return (
-		<form onSubmit={handleSubmit(onSubmit)} className='flex flex-col w-full'>
+		<form onSubmit={handleSubmit(onSubmit)} className='w-full flex flex-col'>
 			<div className='flex flex-col gap-[1px] rounded-lg border border-border'>
 				<div className='h-14' />
 				<div className='h-px w-full bg-tertiary' />

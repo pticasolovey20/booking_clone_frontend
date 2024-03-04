@@ -13,7 +13,7 @@ export const CategoryBar = () => {
 		<div className='h-20 w-full px-6 md:px-8 xxl:px-20 flex items-center justify-between gap-6 shadow-md'>
 			<CategoryList />
 
-			<div className='hidden md:flex shrink-0 items-center gap-4 text-[12px] font-semibold'>
+			<div className='hidden md:flex shrink-0 items-center gap-4 text-[12px] font-medium'>
 				<FilterButton />
 
 				<div
