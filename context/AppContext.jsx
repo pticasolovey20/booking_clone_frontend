@@ -7,8 +7,7 @@ const AppContext = createContext();
 export const AppContextProvider = ({ children }) => {
 	const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
 	const [isLanguageModalOpen, setIsLanguageModalOpen] = useState(false);
-	const [isSignInModalOpen, setIsSignInModalOpen] = useState(false);
-	const [isSignUpModalOpen, setIsSignUpModalOpen] = useState(false);
+	const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
 
 	const handleFilterModalOpen = () => setIsFilterModalOpen(true);
 	const handleFilterModalClose = () => setIsFilterModalOpen(false);
@@ -16,11 +15,8 @@ export const AppContextProvider = ({ children }) => {
 	const handleLanguageModalOpen = () => setIsLanguageModalOpen(true);
 	const handleLanguageModalClose = () => setIsLanguageModalOpen(false);
 
-	const handleSignInModalOpen = () => setIsSignInModalOpen(true);
-	const handleSignInModalClose = () => setIsSignInModalOpen(false);
-
-	const handleSignUpModalOpen = () => setIsSignUpModalOpen(true);
-	const handleSignUpModalClose = () => setIsSignUpModalOpen(false);
+	const handleAuthModalOpen = () => setIsAuthModalOpen(true);
+	const handleAuthModalClose = () => setIsAuthModalOpen(false);
 
 	return (
 		<AppContext.Provider
@@ -31,12 +27,9 @@ export const AppContextProvider = ({ children }) => {
 				isLanguageModalOpen,
 				handleLanguageModalOpen,
 				handleLanguageModalClose,
-				isSignInModalOpen,
-				handleSignInModalOpen,
-				handleSignInModalClose,
-				isSignUpModalOpen,
-				handleSignUpModalOpen,
-				handleSignUpModalClose,
+				isAuthModalOpen,
+				handleAuthModalOpen,
+				handleAuthModalClose,
 			}}
 		>
 			{children}

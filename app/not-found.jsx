@@ -13,7 +13,7 @@ const NotFoundPage = () => {
 	}, []);
 
 	return (
-		<section className='fixed inset-0 min-h-screen w-full flex justify-center items-center bg-primary z-30'>
+		<section className='fixed inset-0 w-full flex justify-center items-center bg-primary z-30'>
 			<div className='flex max-w-[992px] w-full p-8'>
 				<div className='hidden md:flex relative aspect-square basis-[30%] grow shrink'>
 					<Image
@@ -28,8 +28,7 @@ const NotFoundPage = () => {
 
 				<div className='flex flex-col justify-center basis-[40%] grow shrink gap-4 text-[#484848]'>
 					<h1 className='text-6xl font-extrabold'>Oops!</h1>
-					<p className='text-2xl'>We can not seem to find the page you are looking for.</p>
-					<span className='font-semibold'>Error code: 404</span>
+					<p className='text-2xl'>We can not seem to find the page you are looking for</p>
 
 					<Link
 						href='/'

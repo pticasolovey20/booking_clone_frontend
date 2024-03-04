@@ -12,7 +12,9 @@ export const LanguageModal = () => {
 	return (
 		<AnimatePresence initial={false} mode='wait'>
 			{isLanguageModalOpen && (
-				<Modal handleClose={handleLanguageModalClose} content={<Languages />} />
+				<Modal handleClose={handleLanguageModalClose}>
+					<Languages handleClose={handleLanguageModalClose} />
+				</Modal>
 			)}
 		</AnimatePresence>
 	);
