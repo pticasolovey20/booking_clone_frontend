@@ -15,14 +15,13 @@ import { LanguageModal } from '@/components/shared/languages/LanguageModal';
 import { Footer } from '@/components/shared/footer/Footer';
 import { SupportLinks } from '@/components/shared/footer/SupportLinks';
 import { FooterLinks } from '@/components/shared/footer/FooterLinks';
-import { SignInModal } from '@/components/shared/auth/SignInModal';
-import { SignUpModal } from '@/components/shared/auth/SignUpModal';
+import { AuthModal } from '@/components/shared/auth/AuthModal';
 
 import './globals.css';
 
 const font = Poppins({
 	subsets: ['latin'],
-	weight: ['300'],
+	weight: ['400'],
 });
 
 export const metadata = {
@@ -33,7 +32,10 @@ export const metadata = {
 const RootLayout = ({ children }) => {
 	return (
 		<html lang='en'>
-			<body className={cn(font.className, 'h-full flex flex-col')} suppressHydrationWarning={true}>
+			<body
+				className={cn(font.className, 'min-h-screen flex flex-col')}
+				suppressHydrationWarning={true}
+			>
 				<QueryProvider>
 					<AppContextProvider>
 						<Header>
@@ -42,20 +44,19 @@ const RootLayout = ({ children }) => {
 							<CategoryBar />
 							<FilterModal />
 							<LanguageModal />
-							<SignInModal />
-							<SignUpModal />
+							<AuthModal />
 						</Header>
 
 						<main className='flex-1 flex flex-col gap-16 mt-4 mb-12 px-8 xxl:px-20'>
 							{children}
 						</main>
-						<ReactQueryDevtools initialIsOpen={false} />
 
 						<Footer>
 							<SupportLinks />
 							<FooterLinks />
 						</Footer>
 					</AppContextProvider>
+					<ReactQueryDevtools initialIsOpen={false} />
 				</QueryProvider>
 			</body>
 		</html>

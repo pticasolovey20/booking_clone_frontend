@@ -1,11 +1,11 @@
 import { CircleLoader } from '@/components/shared/CircleLoader';
 
-const LoadingPage = () => {
+const Loading = () => {
 	return (
-		<section className='h-[calc(100vh-350px)] flex justify-center items-center'>
+		<section className='h-[calc(100vh-220px)] flex justify-center items-center'>
 			<CircleLoader />
 		</section>
 	);
 };
 
-export default LoadingPage;
+export default Loading;

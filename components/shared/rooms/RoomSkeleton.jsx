@@ -1,11 +1,10 @@
 import { cn } from '@/utils';
 
-export const CardSkeleton = ({ amount }) => {
+export const RoomSkeleton = ({ amount }) => {
 	return (
 		<div
 			className={cn(
-				'grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3',
-				'xl:grid-cols-4 xxl:grid-cols-5 xxxl:grid-cols-6',
+				'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xxl:grid-cols-5',
 				'gap-x-8 gap-y-10 animate-pulse'
 			)}
 		>

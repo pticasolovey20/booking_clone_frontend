@@ -4,8 +4,9 @@ import { useQuery } from '@tanstack/react-query';
 import { fetchRooms } from '@/axios/fetchData';
 import { cn } from '@/utils';
 
-import { CardList } from '@/components/shared/cards/CardList';
-import { CardSkeleton } from '@/components/shared/cards/CardSkeleton';
+import { RoomsList } from '@/components/shared/rooms/RoomsList';
+import { RoomSkeleton } from '@/components/shared/rooms/RoomSkeleton';
+import { Empty } from '@/components/shared/rooms/Empty';
 
 const HomePage = () => {
 	const { isLoading, data: rooms } = useQuery({
@@ -15,8 +16,9 @@ const HomePage = () => {
 
 	return (
 		<>
-			{!isLoading && !!rooms.length && <CardList rooms={rooms} />}
-			{isLoading && <CardSkeleton amount={10} />}
+			{!isLoading && !!rooms.length && <RoomsList rooms={rooms} />}
+			{isLoading && <RoomSkeleton amount={10} />}
+			{!isLoading && !rooms?.length && <Empty />}
 
 			{!isLoading && !!rooms.length && (
 				<div className='w-full flex flex-col items-center justify-center gap-2'>

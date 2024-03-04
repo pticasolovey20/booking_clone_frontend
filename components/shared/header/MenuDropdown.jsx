@@ -16,7 +16,7 @@ import { FaUserCircle } from 'react-icons/fa';
 import { RxHamburgerMenu } from 'react-icons/rx';
 
 export const MenuDropdown = () => {
-	const { handleSignUpModalOpen, handleSignInModalOpen } = useAppContext();
+	const { handleAuthModalOpen } = useAppContext();
 
 	return (
 		<DropdownMenu>
@@ -40,10 +40,10 @@ export const MenuDropdown = () => {
 				align='end'
 				className='mt-1 w-[250px] p-0 py-2 border border-border rounded-2xl shadow-lg'
 			>
-				<DropdownMenuItem role='button' onClick={handleSignUpModalOpen}>
+				<DropdownMenuItem role='button' onClick={handleAuthModalOpen}>
 					Sign up
 				</DropdownMenuItem>
-				<DropdownMenuItem role='button' onClick={handleSignInModalOpen}>
+				<DropdownMenuItem role='button' onClick={handleAuthModalOpen}>
 					Log in
 				</DropdownMenuItem>
 

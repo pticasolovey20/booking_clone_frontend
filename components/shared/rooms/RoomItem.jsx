@@ -8,14 +8,14 @@ import { FaStar } from 'react-icons/fa';
 
 import { NextCircleButton } from '@/components/shared/buttons/NextCircleButton';
 import { PrevCircleButton } from '@/components/shared/buttons/PrevCircleButton';
-import { CardPagination } from '@/components/shared/cards/CardPagination';
+import { RoomImagePagination } from '@/components/shared/rooms/RoomImagePagination';
 
-export const CardItem = ({ galleryImages, title, rate, viewes, total }) => {
+export const RoomItem = ({ galleryImages, title, rate, viewes, total }) => {
 	const hasPrevPage = false;
 	const hasNextPage = true;
 
 	return (
-		<Link href='/s' className='flex flex-col gap-4 select-none group'>
+		<Link href='/' className='flex flex-col gap-4 select-none group'>
 			<div className='aspect-square rounded-2xl overflow-hidden'>
 				<div className='relative h-full w-full'>
 					<span
@@ -63,7 +63,7 @@ export const CardItem = ({ galleryImages, title, rate, viewes, total }) => {
 						/>
 					)}
 
-					<CardPagination />
+					<RoomImagePagination />
 				</div>
 			</div>
 

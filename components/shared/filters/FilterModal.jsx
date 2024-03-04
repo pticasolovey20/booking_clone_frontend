@@ -12,7 +12,9 @@ export const FilterModal = () => {
 	return (
 		<AnimatePresence initial={false} mode='wait'>
 			{isFilterModalOpen && (
-				<Modal handleClose={handleFilterModalClose} label='Filters' content={<Filters />} />
+				<Modal handleClose={handleFilterModalClose}>
+					<Filters handleClose={handleFilterModalClose} />
+				</Modal>
 			)}
 		</AnimatePresence>
 	);
