@@ -29,7 +29,7 @@ export const Filters = ({ handleClose }) => {
 				className={cn(
 					'flex-1 w-full p-6',
 					'flex flex-col items-center',
-					'select-none overflow-y-scroll custom-scroll'
+					'select-none overflow-y-scroll'
 				)}
 			>
 				<span>

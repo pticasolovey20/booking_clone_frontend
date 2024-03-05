@@ -15,10 +15,7 @@ const steps = [
 	{ id: 3, component: <BasicInformationStep /> },
 ];
 
-const Wrapper = (Component, props) => {
-	// eslint-disable-next-line react/display-name
-	return () => <Component {...props} />;
-};
+const Wrapper = (Component, props) => <Component {...props} />;
 
 export const AuthSwiper = ({ handleClose }) => {
 	const [currentStep, setCurrentStep] = useState(1);
@@ -32,7 +29,7 @@ export const AuthSwiper = ({ handleClose }) => {
 	};
 
 	return (
-		<div className='flex flex-col w-full h-full overflow-y-scroll'>
+		<div className='flex flex-col w-full max-h-[685px]'>
 			<div className='relative w-full border-b p-5'>
 				{currentStep !== 1 ? (
 					<button
@@ -65,27 +62,16 @@ export const AuthSwiper = ({ handleClose }) => {
 				</h3>
 			</div>
 
-			<div
-				className={cn(
-					'flex-1 w-full p-6',
-					'flex flex-col items-center',
-					'select-none overflow-auto'
-				)}
-			>
-				<div className='w-full h-full'>
-					{steps.map(({ id, component }) => {
-						const WrappedComponent = Wrapper(component.type, { handleNextStep });
+			<div className='flex-1 w-full flex items-center p-6 pb-0 mb-6 select-none overflow-y-scroll'>
+				{steps.map(({ id, component }) => {
+					const WrappedComponent = () => Wrapper(component.type, { handleNextStep });
 
-						return (
-							<div
-								key={id}
-								className={cn(id === currentStep ? 'block' : 'hidden', 'w-full h-full')}
-							>
-								<WrappedComponent />
-							</div>
-						);
-					})}
-				</div>
+					return (
+						<div key={id} className={cn(id === currentStep ? 'block' : 'hidden', 'w-full h-full')}>
+							<WrappedComponent />
+						</div>
+					);
+				})}
 			</div>
 		</div>
 	);

@@ -12,7 +12,7 @@ export const FilterModal = () => {
 	return (
 		<AnimatePresence initial={false} mode='wait'>
 			{isFilterModalOpen && (
-				<Modal handleClose={handleFilterModalClose}>
+				<Modal handleClose={handleFilterModalClose} classNames='h-full'>
 					<Filters handleClose={handleFilterModalClose} />
 				</Modal>
 			)}
