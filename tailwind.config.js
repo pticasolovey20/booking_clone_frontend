@@ -43,6 +43,10 @@ module.exports = {
 				DEFAULT: 'hsla(var(--border))',
 				separator: 'hsla(var(--border-separator))',
 			},
+
+			backgroundImage: {
+				accentGradient: 'linear-gradient(to right, #E61E4D 0%, #E31C5F 50%, #D70466 100%)',
+			},
 		},
 	},
 

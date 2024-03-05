@@ -23,11 +23,16 @@ const Wrapper = (Component, props) => {
 export const AuthSwiper = ({ handleClose }) => {
 	const [currentStep, setCurrentStep] = useState(1);
 
-	const handlePrevStep = () => setCurrentStep((prev) => (prev > 1 ? prev - 1 : 1));
-	const handleNextStep = () => setCurrentStep((prev) => (prev < steps.length ? prev + 1 : prev));
+	const handlePrevStep = () => {
+		setCurrentStep((prev) => (prev > 1 ? prev - 1 : 1));
+	};
+
+	const handleNextStep = () => {
+		setCurrentStep((prev) => (prev < steps.length ? prev + 1 : handleClose()));
+	};
 
 	return (
-		<div className='flex flex-col w-full h-full'>
+		<div className='flex flex-col w-full h-full overflow-y-scroll'>
 			<div className='relative w-full border-b p-5'>
 				{currentStep !== 1 ? (
 					<button
