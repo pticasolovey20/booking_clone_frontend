@@ -14,7 +14,7 @@ export const AuthModal = () => {
 			{isAuthModalOpen && (
 				<Modal
 					handleClose={handleAuthModalClose}
-					classNames='md:w-[576px] h-fit self-end md:self-center'
+					classNames='md:w-[576px] max-h-full self-end md:self-center'
 				>
 					<AuthSwiper handleClose={handleAuthModalClose} />
 				</Modal>

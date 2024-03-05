@@ -20,7 +20,7 @@ export const Modal = ({ handleClose, classNames, children }) => {
 				variants={dropIn}
 				onClick={(event) => event.stopPropagation()}
 				className={cn(
-					'max-w-[780px] w-full h-full',
+					'max-w-[780px] w-full flex',
 					'rounded-t-xl md:rounded-xl bg-white',
 					classNames
 				)}
