@@ -33,7 +33,7 @@ const RootLayout = ({ children }) => {
 	return (
 		<html lang='en'>
 			<body
-				className={cn(font.className, 'min-h-screen flex flex-col')}
+				className={cn(font.className, 'min-h-[100dvh] flex flex-col')}
 				suppressHydrationWarning={true}
 			>
 				<QueryProvider>
