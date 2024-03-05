@@ -70,6 +70,24 @@ export const Filters = ({ handleClose }) => {
 					convallis.
 				</span>
 			</div>
+
+			<div className='flex justify-between w-full border-t p-5'>
+				<button type='button' className='font-medium rounded-lg'>
+					Clear All
+				</button>
+
+				<button
+					type='button'
+					onClick={handleClose}
+					className={cn(
+						'text-white font-medium',
+						'py-3 px-6 rounded-lg',
+						'bg-[#222222] hover:bg-black duration-300'
+					)}
+				>
+					Show all places
+				</button>
+			</div>
 		</div>
 	);
 };
