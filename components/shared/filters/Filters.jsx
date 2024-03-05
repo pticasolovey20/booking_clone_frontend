@@ -3,7 +3,7 @@ import { MdOutlineClose } from 'react-icons/md';
 
 export const Filters = ({ handleClose }) => {
 	return (
-		<div className='flex flex-col w-full md:w-[576px] h-[calc(100dvh-10px)] md:h-[600px]'>
+		<div className='flex flex-col w-full h-full'>
 			<div className='relative w-full border-b p-5'>
 				<button
 					type='button'
@@ -29,7 +29,7 @@ export const Filters = ({ handleClose }) => {
 				className={cn(
 					'flex-1 w-full p-6',
 					'flex flex-col items-center',
-					'select-none overflow-y-scroll'
+					'select-none overflow-y-scroll custom-scroll'
 				)}
 			>
 				<span>

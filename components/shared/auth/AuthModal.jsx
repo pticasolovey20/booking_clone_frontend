@@ -12,7 +12,10 @@ export const AuthModal = () => {
 	return (
 		<AnimatePresence initial={false} mode='wait'>
 			{isAuthModalOpen && (
-				<Modal handleClose={handleAuthModalClose}>
+				<Modal
+					handleClose={handleAuthModalClose}
+					classNames='md:w-[576px] h-fit self-end md:self-center'
+				>
 					<AuthSwiper handleClose={handleAuthModalClose} />
 				</Modal>
 			)}

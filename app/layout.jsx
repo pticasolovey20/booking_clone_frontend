@@ -17,7 +17,7 @@ import { SupportLinks } from '@/components/shared/footer/SupportLinks';
 import { FooterLinks } from '@/components/shared/footer/FooterLinks';
 import { AuthModal } from '@/components/shared/auth/AuthModal';
 
-import './globals.css';
+import './globals.scss';
 
 const font = Poppins({
 	subsets: ['latin'],
@@ -33,7 +33,7 @@ const RootLayout = ({ children }) => {
 	return (
 		<html lang='en'>
 			<body
-				className={cn(font.className, 'min-h-[100dvh] flex flex-col')}
+				className={cn(font.className, 'min-h-dvh flex flex-col')}
 				suppressHydrationWarning={true}
 			>
 				<QueryProvider>
