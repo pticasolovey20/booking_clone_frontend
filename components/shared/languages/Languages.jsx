@@ -3,7 +3,7 @@ import { MdOutlineClose } from 'react-icons/md';
 
 export const Languages = ({ handleClose }) => {
 	return (
-		<div className='flex flex-col w-full md:w-[576px] h-[calc(100vh-10px)] md:h-[600px]'>
+		<div className='flex flex-col w-full h-full'>
 			<div className='relative w-full border-b p-5'>
 				<button
 					type='button'

@@ -27,7 +27,7 @@ export const AuthSwiper = ({ handleClose }) => {
 	const handleNextStep = () => setCurrentStep((prev) => (prev < steps.length ? prev + 1 : prev));
 
 	return (
-		<div className='w-full md:w-[576px] flex flex-col'>
+		<div className='flex flex-col w-full h-full'>
 			<div className='relative w-full border-b p-5'>
 				{currentStep !== 1 ? (
 					<button
